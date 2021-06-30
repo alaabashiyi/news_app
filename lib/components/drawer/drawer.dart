@@ -10,7 +10,7 @@ class AppDrawerMenu extends StatelessWidget {
     var brightness = MediaQuery.of(context).platformBrightness;
     bool darkModeOn = brightness == Brightness.dark;
     Color? menuBackgroundColor =
-        darkModeOn ? Colors.brown[900] : Colors.grey[300];
+        darkModeOn ? const Color(0xff292929) : const Color(0xfff2f2f2);
 
     return Drawer(
       child: Container(
