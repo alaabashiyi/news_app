@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 const imgSrc =
     'https://pbs.twimg.com/profile_images/1242969566193606656/sHY7uihz_400x400.jpg';
 
@@ -8,17 +9,14 @@ class DrawerUserHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     var brightness = MediaQuery.of(context).platformBrightness;
     bool darkModeOn = brightness == Brightness.dark;
-
 
     return DrawerHeader(
       decoration: BoxDecoration(
         color: darkModeOn ? Colors.black : Colors.white,
       ),
-      padding: const EdgeInsets.symmetric(
-          vertical: 3.0, horizontal: 15.0),
+      padding: const EdgeInsets.only(top: 3, bottom: 0, left: 15, right: 15),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -38,7 +36,10 @@ class DrawerUserHeader extends StatelessWidget {
               const SizedBox(
                 height: 10.0,
               ),
-              Text(username, style: Theme.of(context).textTheme.headline4,),
+              Text(
+                username,
+                style: Theme.of(context).textTheme.headline4,
+              ),
               TextButton(
                 child: Text(
                   'View profile',

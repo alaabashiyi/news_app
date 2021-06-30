@@ -25,8 +25,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     var brightness = MediaQuery.of(context).platformBrightness;
@@ -34,11 +32,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: darkModeOn ? Colors.black : Colors.white, // status bar color
+        backgroundColor:
+            darkModeOn ? Colors.black : Colors.white, // status bar color
         brightness: darkModeOn ? Brightness.dark : Brightness.light,
-        iconTheme: IconThemeData(color: darkModeOn ? Colors.white : Colors.black),
-        title: Text(widget.title,
-            style: Theme.of(context).appBarTheme.titleTextStyle),
+        iconTheme:
+            IconThemeData(color: darkModeOn ? Colors.white : Colors.black),
+        title: Text(
+          widget.title,
+          style: Theme.of(context)
+              .appBarTheme
+              .titleTextStyle
+              ?.copyWith(color: darkModeOn ? Colors.white : Colors.black),
+        ),
         actions: [
           IconButton(
             onPressed: () {},
