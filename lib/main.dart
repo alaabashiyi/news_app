@@ -1,10 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/constants.dart';
-import 'package:news_app/screens/home_screen.dart';
+import 'package:news_app/screens/home/home_actions.dart';
+import 'package:news_app/screens/home/home_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (_) => HomeActions(),
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
